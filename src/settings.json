@@ -1,0 +1,177 @@
+{
+  "name": "EnvyyXml",
+  "version": "v1.0.0",
+  "description": "Simple and easy to use API.",
+  "bannerImage": "/src/banner.jpg",
+  "header": {
+    "status": "Online"
+  },
+  "apiSettings": {
+    "creator": "EnvyyXml", 
+    "apikey": ["envyy-api"]
+  },
+  "categories": [
+    {
+      "name": "AI",
+      "items": [
+        {
+          "name": "Lumin AI",
+          "desc": "Talk with luminai",
+          "path": "/ai/luminai?text=",
+          "status": "ready",
+          "params": {
+            "text": "Text for luminai to respond to"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Downloader",
+      "items": [
+        {
+          "name": "TikTok",
+          "desc": "TikTok Downloader",
+          "path": "/downloader/tiktok?url=",
+          "status": "ready",
+          "params": {
+            "url": "Url is required parameter"
+          }
+        },
+        {
+          "name": "Capcut",
+          "desc": "Capcut Downloader",
+          "path": "/downloader/capcut?url=",
+          "status": "ready",
+          "params": {
+            "url": "Url is required parameter"
+          }
+        },
+        {
+          "name": "Instagram",
+          "desc": "Instagram Downloader",
+          "path": "/downloader/instagram?url=",
+          "status": "ready",
+          "params": {
+            "url": "Url is required parameter"
+          }
+        },
+        {
+          "name": "Facebook",
+          "desc": "Facebook Downloader",
+          "path": "/downloader/facebook?url=",
+          "status": "ready",
+          "params": {
+            "url": "Url is required parameter"
+          }
+        },
+        {
+          "name": "YouTube mp3",
+          "desc": "YouTube mp3 Downloader",
+          "path": "/downloader/ytmp3?url=",
+          "status": "ready",
+          "params": {
+            "url": "Url is required parameter"
+          }
+        },
+        {
+          "name": "YouTube mp4",
+          "desc": "YouTube mp4 Downloader",
+          "path": "/downloader/ytmp4?url=",
+          "status": "ready",
+          "params": {
+            "url": "Url is required parameter"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Maker",
+      "items": [
+        {
+          "name": "Brat",
+          "desc": "Brat Maker",
+          "path": "/maker/brat?text=",
+          "status": "ready",
+          "params": {
+            "text": "Text is required"
+          }
+        },
+        {
+          "name": "Bratvid",
+          "desc": "Bratvid Maker",
+          "path": "/maker/bratvid?text=",
+          "status": "ready",
+          "params": {
+            "text": "Text is required"
+          }
+        },
+        {
+          "name": "Iqc",
+          "desc": "Iqc Maker",
+          "path": "/maker/iqc?text=",
+          "status": "ready",
+          "params": {
+            "text": "Text is required"
+          }
+        },
+        {
+          "name": "Smeme",
+          "desc": "Smeme Maker",
+          "path": "/maker/smeme?text_atas=&text_bawah=&background=",
+          "status": "ready",
+          "params": {
+            "text_atas": "Text is required",
+            "text_bawah": "Text is required",
+            "background": "Background is required"
+          }
+        },
+        {
+          "name": "Qc",
+          "desc": "Qc Maker",
+          "path": "/maker/qc?text=&name=&avatar=&color=",
+          "status": "ready",
+          "params": {
+            "text": "Text is required",
+            "name": "Name is required",
+            "avatar": "Color is required",
+            "color": "Color is required"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Random",
+      "items": [
+        {
+          "name": "Blue Archive",
+          "desc": "Blue Archive Random Images",
+          "path": "/random/ba",
+          "status": "ready"
+        },
+        {
+          "name": "Loli",
+          "desc": "Loli Random Images",
+          "path": "/random/loli",
+          "status": "ready"
+        },
+        {
+          "name": "Pap Ayang",
+          "desc": "Pap Ayang Random Images",
+          "path": "/random/pap",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "name": "Api",
+      "items": [
+        {
+          "name": "Status Api",
+          "desc": "Status Api EnvyyXml",
+          "path": "/api/status",
+          "status": "ready"
+        }
+      ]
+    }
+  ]
+}

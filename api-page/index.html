@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dokumentasi API modern dan antarmuka pengujian yang interaktif. Jelajahi berbagai endpoint API kami dengan mudah.">
+    <meta name="keywords" content="API, Dokumentasi API, REST API, EnvyXml API, EnvyXml, Alat Pengembang">
+    <meta name="author" content="EnvyXml">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://envyxml.my.id/">
+    <meta property="og:title" content="EnvyXml API - Dokumentasi API Modern">
+    <meta property="og:description" content="Jelajahi berbagai endpoint API kami dengan antarmuka yang modern dan mudah digunakan.">
+    <meta property="og:image" content="src/banner.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://envyxml.my.id/">
+    <meta property="twitter:title" content="EnvyXml API - Dokumentasi API Modern">
+    <meta property="twitter:description" content="Jelajahi berbagai endpoint API kami dengan antarmuka yang modern dan mudah digunakan.">
+    <meta property="twitter:image" content="/src/banner.jpg">
+    <link rel="icon" href="/src/icon.png" type="image/png">
+    <title id="page">EnvyXml API</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    
+    <!-- Enhanced Loading Screen -->
+    <div id="loadingScreen" role="status" aria-live="polite">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <div class="loading-logo-inner">
+                    <i class="fas fa-shuttle-space"></i>
+                </div>
+            </div>
+            <p class="loading-text">Loading<span class="loading-dots"></span></p>
+        </div>
+    </div>
+
+    <!-- Enhanced Side Navigation -->
+    <aside class="side-nav" id="sideNav" aria-label="Navigasi Utama">
+        <div class="side-nav-header">
+            <div class="side-nav-logo">
+                <img src="/src/icon.png" alt="Logo API">
+            </div>
+            <div class="side-nav-title">
+                <span class="side-nav-name" id="sideNavName">EnvyXml API</span>
+                <span class="side-nav-version" id="versionBadge">v1.0.0</span>
+            </div>
+        </div>
+        
+        <nav class="side-nav-menu" aria-label="Menu Navigasi">
+            <div class="side-nav-section">
+                <h4 class="side-nav-section-title">Main Course</h4>
+                <a href="#home" class="side-nav-link active" data-section="home">
+                    <i class="fas fa-home side-nav-link-icon"></i>
+                    <span class="side-nav-link-text">Home</span>
+                </a>
+                <a href="#apis" class="side-nav-link" data-section="apis">
+                    <i class="fas fa-plug side-nav-link-icon"></i>
+                    <span class="side-nav-link-text">API</span>
+                </a>
+            </div>
+            
+            <div class="side-nav-section">
+                <h4 class="side-nav-section-title">Resources</h4>
+                <a href="#docs" class="side-nav-link">
+                    <i class="fas fa-book side-nav-link-icon"></i>
+                    <span class="side-nav-link-text">Documentation</span>
+                </a>
+                <a href="https://whatsapp.com/channel/0029Vb7DHno1Hspxz8yMrk1D" target="_blank" rel="noopener noreferrer" class="side-nav-link">
+                    <i class="fas fa-paper-plane side-nav-link-icon"></i>
+                    <span class="side-nav-link-text">Channel</span>
+                </a>
+            </div>
+        </nav>
+        
+        <button class="side-nav-collapse-btn" id="navCollapseBtn" aria-label="Toggle navigation">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper" id="mainWrapper">
+        <!-- Enhanced Header -->
+        <header class="main-header" id="mainHeader" role="banner">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="search-wrapper">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="Cari API..." aria-label="Cari API" autocomplete="off">
+                        <div class="search-shortcut">
+                            <span class="shortcut-key">Ctrl</span>
+                            <span class="shortcut-key">K</span>
+                        </div>
+                        <button class="clear-search" id="clearSearch" aria-label="Clear search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="header-action-btn" id="notificationBtn" aria-label="Notifications">
+                    <i class="far fa-bell"></i>
+                    <span class="notification-badge" id="notificationBadge"></span>
+                </button>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main id="mainContent">
+            <!-- Enhanced Hero Section -->
+            <section id="home" class="hero-section">
+                <div class="hero-background"></div>
+                <div class="hero-container">
+                    <div class="hero-content reveal">
+                        <div class="hero-badge">
+                            <i class="fas fa-rocket"></i>
+                            <span>API Modern & Powerful</span>
+                        </div>
+                        
+                        <h1 class="hero-title">
+                            <span id="heroTitle">EnvyXml API</span>
+                            <span class="hero-title-gradient">Documentation</span>
+                        </h1>
+                        
+                        <p class="hero-description" id="heroDescription">
+                            Modern API documentation platform that is fast and user-friendly. 
+                            Comes with an interactive playground for real-time testing.
+                        </p>
+                        
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <span class="hero-stat-value" id="apiCount">25+</span>
+                                <span class="hero-stat-label">Endpoints</span>
+                            </div>
+                            
+                            <div class="hero-stat">
+                                <span class="hero-stat-value" id="responseTime">10ms</span>
+                                <span class="hero-stat-label">Avg Response</span>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-actions">
+                            <button class="btn btn-primary" onclick="document.getElementById('apis').scrollIntoView({behavior: 'smooth'})">
+                                <i class="fas fa-bolt"></i>
+                                Start Exploration
+                            </button>
+                            <a href="https://whatsapp.com/channel/0029Vb7DHno1Hspxz8yMrk1D" target="_blank" class="btn btn-secondary">
+                                <i class="fas fa-paper-plane"></i>
+                                View on Channel
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual reveal">
+                        <div class="hero-visual-wrapper">
+                            <img src="src/banner.jpg" alt="API Banner" id="heroBanner">
+                            <div class="floating-shapes">
+                                <div class="shape shape-1"></div>
+                                <div class="shape shape-2"></div>
+                                <div class="shape shape-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+            
+            <!-- Enhanced API Section -->
+            <section id="apis" class="api-section">
+                <div class="api-container">
+                    <div class="section-header reveal">
+                        <h2 class="section-title">ENDPOINTS</h2>
+                        <p class="section-description">
+                            Explore our comprehensive API collection with detailed documentation and usage examples
+                        </p>
+                    </div>
+                    
+                    <div class="category-tabs reveal" id="categoryTabs">
+                        <!-- Category tabs will be dynamically generated -->
+                    </div>
+                    
+                    <div class="api-grid" id="apiGrid">
+                        <!-- API cards will be dynamically generated -->
+                    </div>
+                </div>
+            </section>
+            
+            <!-- API Playground Section -->
+            <section id="playground" class="api-section" style="display: none;">
+                <div class="api-container">
+                    <div class="section-header">
+                        <h2 class="section-title">API Playground</h2>
+                        <p class="section-description">
+                            Interactively test and explore API in real-time
+                        </p>
+                    </div>
+                    
+                    <div class="playground-section">
+                        <div class="playground-tabs">
+                            <button class="playground-tab active">Request</button>
+                            <button class="playground-tab">Headers</button>
+                            <button class="playground-tab">Body</button>
+                        </div>
+                        
+                        <div class="request-builder">
+                            <!-- Request builder content -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Enhanced Footer -->
+        <footer class="main-footer" role="contentinfo">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="/src/icon.png" alt="Logo">
+                            <span id="footerName">EnvyXml API</span>
+                        </div>
+                        <p class="footer-description">
+                      Modern API documentation platform for seamless developer exploration and integration.
+                        </p>
+                        <div class="footer-social">
+                            <a href="https://www.instagram.com/kadodesu_?igsh=aWJ5dXhhOWNxM3pt" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@kadokunn?_t=ZS-8xm4NHOzDRI&_r=1" class="social-link" aria-label="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://whatsapp.com/channel/0029Vb7DHno1Hspxz8yMrk1D" class="social-link" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="footer-bottom">
+                    <p class="footer-copyright" id="footerCopyright">
+                        © 2026 EnvyXml. All rights reserved.
+                    </p>
+                    <div class="theme-toggle-wrapper">
+                        <span>Light</span>
+                        <div class="theme-toggle" id="themeToggle">
+                            <div class="theme-toggle-slider">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                        </div>
+                        <span>Dark</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Enhanced Modal -->
+    <div class="modal" id="apiModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">API Detail</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="endpoint-section">
+                    <div class="endpoint-label">
+                        Endpoint
+                        <button class="copy-btn" id="copyEndpoint">
+                            <i class="far fa-copy"></i>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="endpoint-content" id="endpointContent">
+                        <!-- Endpoint will be displayed here -->
+                    </div>
+                </div>
+                
+                <div class="params-section" id="paramsSection">
+                    <!-- Parameters will be displayed here -->
+                </div>
+                
+                <div class="response-section" id="responseSection">
+                    <div class="response-header">
+                        <div class="response-status" id="responseStatus">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Success</span>
+                        </div>
+                        <button class="copy-btn" id="copyResponse">
+                            <i class="far fa-copy"></i>
+                            Copy Response
+                        </button>
+                    </div>
+                    
+                    <div class="response-content">
+                        <pre class="response-code" id="responseCode"></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modalCancel">Cancel</button>
+                <button class="btn btn-primary" id="modalSubmit">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Request
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
